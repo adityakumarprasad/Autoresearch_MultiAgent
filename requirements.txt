@@ -1,0 +1,10 @@
+anthropic>=1,<2
+langgraph>=1.2,<2
+fastmcp>=4,<5
+langsmith>=0.14
+arxiv>=4,<5
+pyyaml
+numpy
+scikit-learn
+matplotlib
+pytest

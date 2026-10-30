@@ -1,0 +1,29 @@
+# Research question. Keep it small enough to run on a laptop CPU in a few minutes.
+topic: "Does feature standardization change how much L2 regularization helps logistic regression on small tabular datasets?"
+
+model: "claude-opus-5-5"
+
+# Hard cap on LLM spend per run (USD). The run stops cleanly when it's reached.
+max_cost_usd: 2.0
+
+# Literature agent
+num_papers: 5
+
+# Engineer agent: write -> run -> fix attempts, and per-run time limit in seconds
+max_code_attempts: 4
+code_timeout: 120
+
+# "docker" (real sandbox), "subprocess" (local dev only, not a security boundary), or "auto"
+sandbox: "auto"
+
+# Retries for failing MCP tool calls (exponential backoff with jitter)
+tool_retries: 3
+
+# Reviewer agent: drafts scoring below this, or with unsupported numbers, get revised
+accept_score: 7
+max_revisions: 2
+
+# Human guidance passed to the planner and engineer
+notes:
+  - "Use the breast cancer dataset from sklearn.datasets."
+  - "Use 5-fold stratified cross-validation and report mean and standard deviation."
